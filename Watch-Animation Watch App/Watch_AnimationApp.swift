@@ -11,7 +11,7 @@ import SwiftUI
 struct Watch_Animation_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            WatchBreathingView(viewModel: BreathingViewModel())
+            WatchBreathingView(viewModel: BreathingViewModel(), iOSConnectivityManager: iOSConnectivity())
         }
     }
 }

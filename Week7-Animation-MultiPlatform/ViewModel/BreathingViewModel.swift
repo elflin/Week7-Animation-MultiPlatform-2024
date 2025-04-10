@@ -8,17 +8,29 @@
 import Combine
 import Foundation
 import SwiftUI
+import WatchConnectivity
 
-class BreathingViewModel: ObservableObject {
+class BreathingViewModel: NSObject, ObservableObject, WCSessionDelegate {
+
     @Published var scale: CGFloat = 1.0
     @Published var color: Color = .blue
     @Published var isAnimating = false
     @Published var sessionTime: Int = 0
     @Published var sessionHistory: [SessionRecord] = []
+    @Published var record: SessionRecord?
 
     private var timer: AnyCancellable?
     private var animationTimer: AnyCancellable?
     private var currentStartDate: Date?
+
+    private var session: WCSession
+
+    init(session: WCSession = .default) {
+        self.session = session
+        super.init()
+        session.delegate = self
+        session.activate()
+    }
 
     func startAnimation() {
         isAnimating = true
@@ -48,8 +60,8 @@ class BreathingViewModel: ObservableObject {
 
         if let start = currentStartDate {
             let end = Date()
-            let record = SessionRecord(start: start, end: end)
-            sessionHistory.insert(record, at: 0)
+            record = SessionRecord(start: start, end: end)
+            sessionHistory.insert(record!, at: 0)
         }
     }
 
@@ -58,5 +70,35 @@ class BreathingViewModel: ObservableObject {
         formatter.dateStyle = .short
         formatter.timeStyle = .medium
         return formatter.string(from: date)
+    }
+
+    func session(
+        _ session: WCSession,
+        activationDidCompleteWith activationState: WCSessionActivationState,
+        error: (any Error)?
+    ) {
+    }
+
+    #if os(iOS)
+        func sessionDidBecomeInactive(_ session: WCSession) {
+        }
+
+        func sessionDidDeactivate(_ session: WCSession) {
+        }
+    #endif
+
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any])
+    {
+        DispatchQueue.main.sync {
+            print("Received message: \(message)")
+
+            self.sessionHistory.insert(
+                SessionRecord(
+                    start: message["start"] as! Date,
+                    end: message["end"] as! Date
+                )
+                , at: 0
+            )
+        }
     }
 }

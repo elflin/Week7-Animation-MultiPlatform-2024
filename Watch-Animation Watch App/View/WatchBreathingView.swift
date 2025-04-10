@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WatchBreathingView: View {
     @ObservedObject var viewModel: BreathingViewModel
+    @ObservedObject var iOSConnectivityManager: iOSConnectivity
 
     var body: some View {
         VStack(spacing: 12) {
@@ -26,7 +27,12 @@ struct WatchBreathingView: View {
             Text("\(viewModel.sessionTime) sec")
 
             Button(viewModel.isAnimating ? "Stop" : "Start") {
-                viewModel.isAnimating ? viewModel.stopAnimation() : viewModel.startAnimation()
+                if viewModel.isAnimating {
+                    viewModel.stopAnimation()
+                    iOSConnectivityManager.sendToiOS(data: viewModel.record!)
+                } else {
+                    viewModel.startAnimation()
+                }
             }
         }
         .padding()
@@ -34,5 +40,8 @@ struct WatchBreathingView: View {
 }
 
 #Preview {
-    WatchBreathingView(viewModel: BreathingViewModel())
+    WatchBreathingView(
+        viewModel: BreathingViewModel(),
+        iOSConnectivityManager: iOSConnectivity()
+    )
 }
