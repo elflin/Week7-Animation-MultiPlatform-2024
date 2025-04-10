@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		403637382DA7629700758ADC /* Watch-Animation Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4036372E2DA7629400758ADC /* Watch-Animation Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4036378B2DA772B900758ADC /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378A2DA772B900758ADC /* WatchConnectivity.framework */; };
+		4036378D2DA772C400758ADC /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378C2DA772C400758ADC /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		403637162DA75FE900758ADC /* Week7-Animation-MultiPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week7-Animation-MultiPlatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4036372E2DA7629400758ADC /* Watch-Animation Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch-Animation Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		403637462DA7640F00758ADC /* Mac-Animation-Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac-Animation-Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4036378A2DA772B900758ADC /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		4036378C2DA772C400758ADC /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.4.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -86,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4036378B2DA772B900758ADC /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4036378D2DA772C400758ADC /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,7 @@
 				403637182DA75FE900758ADC /* Week7-Animation-MultiPlatform */,
 				4036372F2DA7629400758ADC /* Watch-Animation Watch App */,
 				403637472DA7640F00758ADC /* Mac-Animation-Multiplatform */,
+				403637892DA772B900758ADC /* Frameworks */,
 				403637172DA75FE900758ADC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +131,15 @@
 				403637462DA7640F00758ADC /* Mac-Animation-Multiplatform.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		403637892DA772B900758ADC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4036378C2DA772C400758ADC /* WatchConnectivity.framework */,
+				4036378A2DA772B900758ADC /* WatchConnectivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
