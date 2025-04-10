@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		403637382DA7629700758ADC /* Watch-Animation Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4036372E2DA7629400758ADC /* Watch-Animation Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4036378B2DA772B900758ADC /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378A2DA772B900758ADC /* WatchConnectivity.framework */; };
-		4036378D2DA772C400758ADC /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378C2DA772C400758ADC /* WatchConnectivity.framework */; };
+		403637BC2DA78D3400758ADC /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378A2DA772B900758ADC /* WatchConnectivity.framework */; };
+		403637BD2DA78D3400758ADC /* WatchConnectivity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378A2DA772B900758ADC /* WatchConnectivity.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		403637BF2DA78D3E00758ADC /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378C2DA772C400758ADC /* WatchConnectivity.framework */; };
+		403637C02DA78D3E00758ADC /* WatchConnectivity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4036378C2DA772C400758ADC /* WatchConnectivity.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,28 @@
 				403637382DA7629700758ADC /* Watch-Animation Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		403637BE2DA78D3400758ADC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				403637BD2DA78D3400758ADC /* WatchConnectivity.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		403637C12DA78D3E00758ADC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				403637C02DA78D3E00758ADC /* WatchConnectivity.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -57,7 +81,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model/SessionRecord.swift,
-				ViewModel/BreathingViewModel.swift,
 			);
 			target = 403637452DA7640F00758ADC /* Mac-Animation-Multiplatform */;
 		};
@@ -90,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4036378B2DA772B900758ADC /* WatchConnectivity.framework in Frameworks */,
+				403637BC2DA78D3400758ADC /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4036378D2DA772C400758ADC /* WatchConnectivity.framework in Frameworks */,
+				403637BF2DA78D3E00758ADC /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +176,7 @@
 				403637132DA75FE900758ADC /* Frameworks */,
 				403637142DA75FE900758ADC /* Resources */,
 				4036373C2DA7629700758ADC /* Embed Watch Content */,
+				403637BE2DA78D3400758ADC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +200,7 @@
 				4036372A2DA7629400758ADC /* Sources */,
 				4036372B2DA7629400758ADC /* Frameworks */,
 				4036372C2DA7629400758ADC /* Resources */,
+				403637C12DA78D3E00758ADC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
