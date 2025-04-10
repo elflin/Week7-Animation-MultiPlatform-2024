@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct SessionRecord: Identifiable {
+    let id = UUID()
+    let start: Date
+    let end: Date
+    var duration: TimeInterval {
+        end.timeIntervalSince(start)
+    }
+}

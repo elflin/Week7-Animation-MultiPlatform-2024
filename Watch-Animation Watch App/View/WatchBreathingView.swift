@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WatchBreathingView: View {
-    @ObservedObject var viewModel: BreathingViewModel = BreathingViewModel()
+    @ObservedObject var viewModel: BreathingViewModel
 
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             Image(systemName: "heart.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -23,17 +23,16 @@ struct WatchBreathingView: View {
                     WKInterfaceDevice.current().play(.start)
                 }
 
+            Text("\(viewModel.sessionTime) sec")
+
             Button(viewModel.isAnimating ? "Stop" : "Start") {
-                viewModel.isAnimating
-                    ? viewModel.stopAnimation() : viewModel.startAnimation()
+                viewModel.isAnimating ? viewModel.stopAnimation() : viewModel.startAnimation()
             }
-            .font(.footnote)
-            .padding(.top, 8)
         }
         .padding()
     }
 }
 
 #Preview {
-    WatchBreathingView()
+    WatchBreathingView(viewModel: BreathingViewModel())
 }

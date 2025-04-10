@@ -44,6 +44,7 @@
 		4036373E2DA762D400758ADC /* Exceptions for "Week7-Animation-MultiPlatform" folder in "Watch-Animation Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Model/SessionRecord.swift,
 				ViewModel/BreathingViewModel.swift,
 			);
 			target = 4036372D2DA7629400758ADC /* Watch-Animation Watch App */;
@@ -51,6 +52,7 @@
 		403637562DA7647B00758ADC /* Exceptions for "Week7-Animation-MultiPlatform" folder in "Mac-Animation-Multiplatform" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Model/SessionRecord.swift,
 				ViewModel/BreathingViewModel.swift,
 			);
 			target = 403637452DA7640F00758ADC /* Mac-Animation-Multiplatform */;
